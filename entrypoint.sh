@@ -22,10 +22,10 @@ set +x
 
 ls ~/vrising
 
-vrisingExe="~/vrising/VRisingServer.exe"
-if [ ! -f ${vrisingExe} ];then
-    echo "${vrisingExe} does not exist"
-    die
-fi
+#vrisingExe="~/vrising/VRisingServer.exe"
+#if [ ! -f ${vrisingExe} ];then
+#    echo "${vrisingExe} does not exist"
+#    die
+#fi
 
-$PROTON run $vrisingExe
+$PROTON run ~/vrising/VRisingServer.exe -persistentDataPath ~/vrising/persistentdata
