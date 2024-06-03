@@ -24,7 +24,7 @@ ENV STEAM_COMPAT_CLIENT_INSTALL_PATH=$STEAM_PATH
 ENV PROTON=${STEAM_PATH}/compatibilitytools.d/${PROTON_VERSION}/proton
 
 
-COPY entrypoint.sh /entrypoint.sh
-RUN chmod +x /entrypoint.sh
+COPY entrypoint.sh ${STEAM_HOME}/entrypoint.sh
+RUN chmod +x ${STEAM_HOME}/entrypoint.sh
 
-ENTRYPOINT ["/entrypoint.sh"]
+ENTRYPOINT ${STEAM_HOME}/entrypoint.sh
