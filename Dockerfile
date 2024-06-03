@@ -1,6 +1,6 @@
 FROM cm2network/steamcmd:root
 
-RUN apt-get update && apt-get install -y gosu cron wget python3 libfreetype6
+RUN apt-get update && apt-get install -y gosu cron wget python3 libfreetype6 xvfb
 
 ENV STEAM_HOME="/home/steam" \
     STEAM_USER="steam" \
