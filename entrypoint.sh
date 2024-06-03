@@ -28,4 +28,6 @@ ls ~/vrising
 #    die
 #fi
 
-$PROTON run ~/vrising/VRisingServer.exe -persistentDataPath ~/vrising/persistentdata
+#$PROTON run ~/vrising/VRisingServer.exe -persistentDataPath ~/vrising/persistentdata
+
+tail -f /etc/hosts
