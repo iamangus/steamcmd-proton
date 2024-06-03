@@ -1,5 +1,7 @@
 # add this to entrypoint so it is more generic
 
+steamcmd=${STEAM_HOME}/steamcmd/steamcmd.sh
+
 whoami
 
 groups
@@ -15,7 +17,7 @@ cd ${STEAM_HOME}
 pwd
 
 set -x
-steamcmd +@sSteamCmdForcePlatformType windows +force_install_dir ~/vrising +login anonymous +app_update 1829350 validate +quit || die
+$steamcmd +@sSteamCmdForcePlatformType windows +force_install_dir ~/vrising +login anonymous +app_update 1829350 validate +quit || die
 set +x
 
 vrisingExe="~/vrising/VRisingServer.exe"
