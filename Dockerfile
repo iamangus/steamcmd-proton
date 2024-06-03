@@ -4,7 +4,7 @@ RUN apt-get update && apt-get install -y gosu cron wget python3 libfreetype6
 
 ENV STEAM_HOME="/home/steam" \
     STEAM_USER="steam" \
-    STEAM_PATH="/home/steam/.steam/steam" \
+    STEAM_PATH="/home/steam/.steam/steam"
 
 RUN mkdir -p ${STEAM_PATH}
 WORKDIR ${STEAM_PATH}
