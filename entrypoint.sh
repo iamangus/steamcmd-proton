@@ -6,16 +6,16 @@ groups
 
 pwd
 
-cd ${STEAM_HOME}
-
-mkdir vrising
-
 mkdir -p steamapps/compatdata/1829350
 cp -r compatibilitytools.d/${PROTON_VERSION}/files/share/default_pfx steamapps/compatdata/1829350
 export STEAM_COMPAT_DATA_PATH=${STEAM_PATH}/steamapps/compatdata/1829350
 
+cd ${STEAM_HOME}
+
+pwd
+
 set -x
-$steamcmd +@sSteamCmdForcePlatformType windows +force_install_dir ~/vrising +login anonymous +app_update 1829350 validate +quit || die
+steamcmd +@sSteamCmdForcePlatformType windows +force_install_dir ~/vrising +login anonymous +app_update 1829350 validate +quit || die
 set +x
 
 vrisingExe="~/vrising/VRisingServer.exe"
