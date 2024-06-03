@@ -20,6 +20,8 @@ set -x
 $steamcmd +@sSteamCmdForcePlatformType windows +force_install_dir ~/vrising +login anonymous +app_update 1829350 validate +quit || die
 set +x
 
+ls ~/vrising
+
 vrisingExe="~/vrising/VRisingServer.exe"
 if [ ! -f ${vrisingExe} ];then
     echo "${vrisingExe} does not exist"
