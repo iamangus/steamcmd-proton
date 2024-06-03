@@ -1,5 +1,27 @@
 # add this to entrypoint so it is more generic
-RUN mkdir -p steamapps/compatdata/${APPID}
-RUN cp -r compatibilitytools.d/${PROTON_VERSION}/files/share/default_pfx steamapps/compatdata/${APPID}
-ENV STEAM_COMPAT_DATA_PATH=${STEAM_PATH}/steamapps/compatdata/${APPID}
 
+whoami
+
+groups
+
+pwd
+
+cd ${STEAM_HOME}
+
+mkdir vrising
+
+mkdir -p steamapps/compatdata/1829350
+cp -r compatibilitytools.d/${PROTON_VERSION}/files/share/default_pfx steamapps/compatdata/1829350
+export STEAM_COMPAT_DATA_PATH=${STEAM_PATH}/steamapps/compatdata/1829350
+
+set -x
+$steamcmd +@sSteamCmdForcePlatformType windows +force_install_dir ~/vrising +login anonymous +app_update 1829350 validate +quit || die
+set +x
+
+vrisingExe="~/vrising/VRisingServer.exe"
+if [ ! -f ${vrisingExe} ];then
+    echo "${vrisingExe} does not exist"
+    die
+fi
+
+$PROTON run $vrisingExe
